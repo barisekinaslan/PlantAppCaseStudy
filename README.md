@@ -1,13 +1,39 @@
-> Why do I have a folder named ".expo" in my project?
+# PlantApp Case Study
 
-The ".expo" folder is created when an Expo project is started using "expo start" command.
+This project is a React Native case study built according to the provided Figma design and requirements.
 
-> What do the files contain?
+## Features
 
-- "devices.json": contains information about devices that have recently opened this project. This is used to populate the "Development sessions" list in your development builds.
-- "settings.json": contains the server configuration that is used to serve the application manifest.
+- Onboarding flow (Welcome → Step1 → Step2 → Paywall)
+- Home flow with bottom tab navigation
+- Pixel-perfect UI based on Figma
+- Redux Toolkit for state management
+- TypeScript for type safety
+- API integration for categories & questions
+- Paywall screen with plan selection
+- Onboarding completion is persisted (user does not re-enter onboarding)
 
-> Should I commit the ".expo" folder?
+## Flows
 
-No, you should not share the ".expo" folder. It does not contain any information that is relevant for other developers working on the project, it is specific to your machine.
-Upon project creation, the ".expo" folder is already added to your ".gitignore" file.
+**Onboarding Flow**
+Welcome → Step1 → Step2 → Paywall  
+When the Paywall is closed or the trial is started, onboarding is marked as completed and the user is navigated to Home.
+
+**Home Flow**
+Home → Paywall (from Premium banner)
+
+Paywall can be opened from anywhere, and closing it always returns the user to Home.
+
+## Tech Stack
+
+- React Native (Expo)
+- TypeScript
+- Redux Toolkit
+- React Navigation
+- RTK Query
+
+## Run the project
+
+```bash
+npm install
+npx expo start
